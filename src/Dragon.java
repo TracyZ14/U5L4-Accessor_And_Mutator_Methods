@@ -5,6 +5,7 @@ public class Dragon
     private int level;
     private boolean dead;
     private int attackDamage;
+    private int totalAttackDamage;
 
     public Dragon()
     {
@@ -13,6 +14,7 @@ public class Dragon
         this.level = 1;
         this.dead = false;
         this.attackDamage = 0;
+        this.totalAttackDamage = 0;
     }
 
     public void takeDamage(int damageTaken)
@@ -42,8 +44,13 @@ public class Dragon
         int attack = strength * level;
         System.out.println("The dragon attacks for " + attack + " health points!");
         attackDamage = attackDamage + attack;
-        level++;
-        return attack;
+        totalAttackDamage = totalAttackDamage + attack;
+        while(totalAttackDamage >= 50)
+        {
+            level++;
+            totalAttackDamage = totalAttackDamage - 50;
+        }
+        return attackDamage;
     }
 
     public void powerUp(int powerUpChoice)
@@ -78,5 +85,11 @@ public class Dragon
     public boolean isDead()
     {
         return dead;
+    }
+
+    public String toString()
+    {
+        String dragonStats = "Dragon:\nStrength = " + strength + "\nHealth = " + health + "\nLevel = " + level + "\nDead = " + dead + "\nAttack Damage = " + attackDamage;
+        return dragonStats;
     }
 }
