@@ -108,8 +108,47 @@ public class DragonTester
         System.out.println(dragon);
         System.out.println();
 
-        System.out.println("EXPECTED RESULT : ");
+        System.out.println("EXPECTED RESULT : The dragon takes 65 damage and now has 25 health.");
         System.out.print("ACTUAL RESULT   : ");
+        dragon.takeDamage(65);
         System.out.println();
+
+        System.out.println("EXPECTED RESULT :");
+        System.out.println("The dragon takes 40 damage and now has 0 health.");
+        System.out.println("The dragon has been slayed!");
+        System.out.println("ACTUAL RESULT   :");
+        dragon.takeDamage(40);
+        System.out.println();
+
+        System.out.println("EXPECTED RESULT : The dragon is already dead!");
+        System.out.print("ACTUAL RESULT   : ");
+        dragon.takeDamage(10);
+        System.out.println();
+
+        System.out.println("EXPECTED RESULT :");
+        System.out.println("Dragon:");
+        System.out.println("Strength = 32");
+        System.out.println("Health = 0");
+        System.out.println("Level = 2");
+        System.out.println("Dead = true");
+        System.out.println("Attack Damage = 0");
+        System.out.println("ACTUAL RESULT   :");
+        System.out.println(dragon);
+        System.out.println();
+
+        System.out.println("EXPECTED RESULT : 32");
+        System.out.println("ACTUAL RESULT   : " + dragon.getStrength());
+        System.out.println();
+
+        System.out.println("EXPECTED RESULT : 0");
+        System.out.println("ACTUAL RESULT   : " + dragon.getHealth());
+        System.out.println();
+
+        System.out.println("EXPECTED RESULT : 2");
+        System.out.println("ACTUAL RESULT   : " + dragon.getLevel());
+        System.out.println();
+
+        System.out.println("EXPECTED RESULT : true");
+        System.out.println("ACTUAL RESULT   : " + dragon.isDead());
     }
 }

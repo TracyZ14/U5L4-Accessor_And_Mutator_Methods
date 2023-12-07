@@ -42,10 +42,10 @@ public class Dragon
         int attack = strength * level;
         System.out.println("The dragon attacks for " + attack + " health points!");
         attackDamage = attackDamage + attack;
-        while(attackDamage >= 50)
+        if(attackDamage >= 50)
         {
             level++;
-            attackDamage = attackDamage - 50;
+            attackDamage = 0;
         }
         return attackDamage;
     }
@@ -55,12 +55,12 @@ public class Dragon
         if(powerUpChoice == 1)
         {
             health = health * 2;
-            System.out.println("The dragon's health has increased to " + health + "!");
+            System.out.println("The dragon's health has increased to " + health + ".");
         }
         if(powerUpChoice == 2)
         {
             strength = strength * 2;
-            System.out.println("The dragon's strength has increased to " + strength + "!");
+            System.out.println("The dragon's strength has increased to " + strength + ".");
         }
     }
 
