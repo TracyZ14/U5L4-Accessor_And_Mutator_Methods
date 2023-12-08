@@ -30,6 +30,10 @@ public class StepTracker
 
     public double averageSteps()
     {
+        if(daysDataEntered == 0)
+        {
+            return 0.0;
+        }
         return((double) totalSteps / daysDataEntered);
     }
 }
